@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/context 
+    	http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+        http://www.springframework.org/schema/data/jpa 
+        http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd">
+
+	<!-- 使用annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
+	<context:component-scan base-package="demo">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+	<context:component-scan base-package="platform" />
+
+	<!-- 加载配置文件，放入缓存 -->
+	<bean id="propertyConfigurer" class="platform.property.PropertyLoader">
+		<property name="locations">
+			<list>
+				<value>classpath:/application.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!--定义实体的工厂bean(未使用连接池) -->
+	<!-- <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
+		<property name="persistenceUnitName" value="userPU" /> <property name="persistenceXmlLocation" 
+		value="classpath*:/persistence.xml"></property> </bean> -->
+
+	<!--定义实体的工厂bean(连接池) -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="demo.entity,platform.demo.entity" />
+		<property name="persistenceProvider" ref="persistenceProvider" />
+		<property name="jpaProperties">
+			<props>
+				<!-- 命名规则 My_NAME->MyName -->
+				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+				<!--激活查询日志功能 -->
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!--jpa的提供者 -->
+	<bean id="persistenceProvider" class="org.hibernate.ejb.HibernatePersistence" />
+
+	<!-- 配置数据源，id须为dataSource -->
+	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${driverClassName}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+
+		<!-- Connection Pooling Info -->
+		<property name="maxActive" value="${jdbc.pool.maxActive}" />
+		<property name="maxIdle" value="${jdbc.pool.maxIdle}" />
+		<property name="defaultAutoCommit" value="false" />
+		<!-- 连接Idle半个小时后超时，每15分钟检查一次 -->
+		<property name="timeBetweenEvictionRunsMillis" value="900000" />
+		<property name="minEvictableIdleTimeMillis" value="1800000" />
+	</bean>
+
+	<!--定义事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<!--定义repository接口的存放目录 -->
+	<!--定义实体工厂的引用 -->
+	<!--定义事务管理器的引用 -->
+	<!-- 实现jpa扩展类 -->
+	<jpa:repositories base-package="demo.reposity,platform.demo.reposity"
+		entity-manager-factory-ref="entityManagerFactory"
+		transaction-manager-ref="transactionManager" factory-class="platform.repository.JpaDaoFactoryBean" />
+
+	<!--声明采用注解的方式申明事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- Memcached 配置 -->
+	<bean name="memcachedClient"
+		class="net.rubyeye.xmemcached.utils.XMemcachedClientFactoryBean"
+		destroy-method="shutdown">
+		<property name="servers" value="${memcached.servers}" />
+		<property name="connectionPoolSize" value="${memcached.connection.poolSize}" />
+	</bean>
+
+	<!-- 导入shiro定义 -->
+	<import resource="classpath:/applicationContext-shiro.xml" />
+	<!-- 导入platform -->
+	<import resource="classpath:/platform.xml" />
+
+</beans>

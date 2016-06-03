@@ -1,0 +1,1287 @@
+08:21:48.201 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+08:21:48.204 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:21:48.205 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+08:21:48.240 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+08:21:48.240 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+08:21:48.256 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+08:21:48.431 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+08:21:48.432 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:21:48.433 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@6907caab] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+08:21:48.433 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+08:21:48.434 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+08:21:48.645 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+08:21:50.013 [localhost-startStop-1] WARN  o.h.e.jdbc.internal.JdbcServicesImpl - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+08:21:50.022 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:752)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:104)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:71)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:338)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1613)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1550)
+	... 21 common frames omitted
+08:21:50.051 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+08:21:50.060 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+08:21:50.060 [localhost-startStop-1] ERROR o.s.web.context.ContextLoader - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:752)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:104)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:71)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:338)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1613)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1550)
+	... 21 common frames omitted
+08:22:26.796 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+08:22:26.801 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:22:26.801 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+08:22:26.838 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+08:22:26.838 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+08:22:26.848 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+08:22:26.996 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+08:22:26.998 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:22:26.999 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@619e7418] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+08:22:26.999 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+08:22:27.000 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+08:22:27.174 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+08:22:30.197 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+08:22:37.544 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+08:22:37.551 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+08:26:26.587 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+08:26:26.591 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:26:26.591 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+08:26:26.627 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+08:26:26.628 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+08:26:26.639 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+08:26:26.781 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+08:26:26.785 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:26:26.785 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@13ab80d6] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+08:26:26.786 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+08:26:26.787 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+08:26:26.885 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [applicationContext.xml]: Cannot resolve reference to bean 'dataSource' while setting bean property 'dataSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'maxActive'; nested exception is java.lang.NumberFormatException: For input string: "${jdbc.pool.maxActive}"
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1457)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1198)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:752)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'maxActive'; nested exception is java.lang.NumberFormatException: For input string: "${jdbc.pool.maxActive}"
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'maxActive'; nested exception is java.lang.NumberFormatException: For input string: "${jdbc.pool.maxActive}"
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:480)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:512)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:506)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1503)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1462)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1198)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	... 30 common frames omitted
+Caused by: java.lang.NumberFormatException: For input string: "${jdbc.pool.maxActive}"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:569)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:171)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:113)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:430)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:403)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:181)
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:460)
+	... 36 common frames omitted
+08:26:26.908 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+08:26:26.915 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+08:26:26.916 [localhost-startStop-1] ERROR o.s.web.context.ContextLoader - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [applicationContext.xml]: Cannot resolve reference to bean 'dataSource' while setting bean property 'dataSource'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'maxActive'; nested exception is java.lang.NumberFormatException: For input string: "${jdbc.pool.maxActive}"
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:336)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1457)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1198)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:752)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [applicationContext.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'maxActive'; nested exception is java.lang.NumberFormatException: For input string: "${jdbc.pool.maxActive}"
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'int' for property 'maxActive'; nested exception is java.lang.NumberFormatException: For input string: "${jdbc.pool.maxActive}"
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:480)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:512)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:506)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1503)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1462)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1198)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	... 30 common frames omitted
+Caused by: java.lang.NumberFormatException: For input string: "${jdbc.pool.maxActive}"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:569)
+	at java.lang.Integer.valueOf(Integer.java:766)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:171)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:113)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:430)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:403)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:181)
+	at org.springframework.beans.BeanWrapperImpl.convertIfNecessary(BeanWrapperImpl.java:460)
+	... 36 common frames omitted
+08:27:16.988 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+08:27:16.991 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:27:16.992 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+08:27:17.031 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+08:27:17.032 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+08:27:17.046 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+08:27:17.207 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+08:27:17.209 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:27:17.209 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@2bebfb0e] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+08:27:17.210 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+08:27:17.211 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+08:27:17.358 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+08:27:19.539 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+08:27:31.475 [http-bio-8080-exec-5] ERROR demo.controller.DemoController - abc
+08:27:49.731 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+08:27:49.737 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+08:54:17.049 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+08:54:17.054 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:54:17.054 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+08:54:17.088 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+08:54:17.088 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+08:54:17.113 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+08:54:17.311 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+08:54:17.313 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:54:17.315 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@71a94207] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+08:54:17.316 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+08:54:17.317 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+08:54:17.547 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+08:54:17.874 [localhost-startStop-1] WARN  o.h.e.jdbc.internal.JdbcServicesImpl - HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+08:54:17.886 [localhost-startStop-1] WARN  o.s.w.c.s.XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:752)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:104)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:71)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:338)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1613)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1550)
+	... 21 common frames omitted
+08:54:17.915 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+08:54:17.920 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+08:54:17.920 [localhost-startStop-1] ERROR o.s.web.context.ContextLoader - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [applicationContext.xml]: Invocation of init method failed; nested exception is org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1554)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:752)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:104)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:71)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:397)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createContainerEntityManagerFactory(HibernatePersistenceProvider.java:150)
+	at org.hibernate.ejb.HibernatePersistence.createContainerEntityManagerFactory(HibernatePersistence.java:67)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:338)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1613)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1550)
+	... 21 common frames omitted
+08:54:55.575 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+08:54:55.579 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:54:55.579 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+08:54:55.622 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+08:54:55.623 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+08:54:55.639 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+08:54:55.820 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+08:54:55.822 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+08:54:55.822 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@35117093] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+08:54:55.822 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+08:54:55.824 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+08:54:56.027 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+08:54:59.265 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+08:55:06.911 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+08:55:06.918 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+09:08:21.422 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+09:08:21.426 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+09:08:21.427 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+09:08:21.468 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+09:08:21.469 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+09:08:21.479 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+09:08:21.654 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+09:08:21.656 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+09:08:21.657 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@5528719f] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+09:08:21.657 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+09:08:21.659 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+09:08:21.868 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+09:08:24.323 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+09:08:29.679 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+09:08:29.689 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+12:55:44.461 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+12:55:44.467 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+12:55:44.467 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+12:55:44.517 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+12:55:44.517 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+12:55:44.536 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+12:55:44.760 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+12:55:44.762 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+12:55:44.762 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@7f82ce18] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+12:55:44.762 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+12:55:44.766 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+12:55:45.008 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+12:55:49.228 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+12:56:04.530 [http-bio-8080-exec-6] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1054, SQLState: 42S22
+12:56:04.530 [http-bio-8080-exec-5] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1054, SQLState: 42S22
+12:56:04.535 [http-bio-8080-exec-6] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unknown column 'demoentity0_.birthday' in 'field list'
+12:56:04.535 [http-bio-8080-exec-5] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Unknown column 'demoentity0_.birthday' in 'field list'
+13:00:13.307 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:00:13.312 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:00:13.313 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:00:13.363 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:00:13.364 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:00:13.391 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:00:13.584 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:00:13.586 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:00:13.587 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@bcc8402] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:00:13.588 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:00:13.590 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:00:13.866 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:00:16.712 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:02:03.520 [http-bio-8080-exec-8] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1406, SQLState: 22001
+13:02:03.524 [http-bio-8080-exec-8] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Data truncation: Data too long for column 'id' at row 1
+13:05:29.754 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:05:29.760 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:05:29.761 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:05:29.831 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:05:29.832 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:05:29.863 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:05:30.100 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:05:30.102 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:05:30.103 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@7747e939] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:05:30.103 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:05:30.106 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:05:30.380 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:05:33.356 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:06:23.645 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:06:23.652 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:06:23.652 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:06:23.750 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:06:23.750 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:06:23.776 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:06:23.981 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:06:23.983 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:06:23.984 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@71a2d593] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:06:23.984 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:06:23.991 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:06:24.207 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:06:26.869 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:17:02.403 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:17:02.411 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:17:02.411 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:17:02.488 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:17:02.489 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:17:02.515 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:17:02.740 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:17:02.742 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:17:02.742 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@6f79d570] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:17:02.743 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:17:02.745 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:17:03.042 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:17:06.776 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:17:54.650 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:17:54.656 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:17:54.657 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:17:54.715 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:17:54.715 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:17:54.731 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:17:54.938 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:17:54.939 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:17:54.940 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@7aac10d2] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:17:54.940 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:17:54.941 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:17:55.163 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:17:57.884 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:20:24.600 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+13:20:24.612 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+13:20:52.548 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:20:52.551 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:20:52.551 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:20:52.601 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:20:52.602 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:20:52.621 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:20:52.816 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:20:52.818 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:20:52.818 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@515b3646] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:20:52.818 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:20:52.819 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:20:53.042 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:20:55.724 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:28:28.938 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:28:28.944 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:28:28.944 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:28:29.007 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:28:29.007 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:28:29.024 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:28:29.238 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:28:29.242 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:28:29.242 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@1a4717ca] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:28:29.243 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:28:29.244 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:28:29.462 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:28:32.045 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:34:33.589 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:34:33.596 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:34:33.596 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:34:33.653 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:34:33.653 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:34:33.674 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:34:33.871 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:34:33.874 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:34:33.874 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@53614009] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:34:33.874 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:34:33.876 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:34:34.150 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:34:38.601 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:36:08.149 [http-bio-8080-exec-10] WARN  o.s.web.servlet.PageNotFound - No mapping found for HTTP request with URI [/WebApp/WebApp/main/welcome] in DispatcherServlet with name 'springServlet'
+13:36:46.227 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+13:36:46.232 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:36:46.233 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+13:36:46.301 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+13:36:46.302 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+13:36:46.320 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+13:36:46.513 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+13:36:46.515 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+13:36:46.516 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@4cb9bb40] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+13:36:46.516 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+13:36:46.517 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+13:36:46.755 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+13:36:49.377 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+13:36:56.716 [http-bio-8080-exec-3] WARN  o.s.web.servlet.PageNotFound - No mapping found for HTTP request with URI [/WebApp/WebApp/main/welcome] in DispatcherServlet with name 'springServlet'
+16:16:25.643 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:16:25.649 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:16:25.649 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:16:25.700 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:16:25.704 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:16:25.722 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:16:25.930 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:16:25.932 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:16:25.934 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@2530f343] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:16:25.934 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:16:25.935 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:16:26.177 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:16:30.434 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:19:01.555 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+16:19:01.581 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+16:19:06.344 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:19:06.349 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:19:06.349 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:19:06.393 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:19:06.393 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:19:06.409 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:19:06.556 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:19:06.559 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:19:06.559 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@223a2d1f] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:19:06.559 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:19:06.560 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:19:06.724 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:19:09.719 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:19:10.465 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+16:19:10.470 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+16:26:55.717 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:26:55.722 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:26:55.722 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:26:55.764 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:26:55.764 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:26:55.779 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:26:55.966 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:26:55.967 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:26:55.968 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@18b7b3aa] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:26:55.968 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:26:55.969 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:26:56.155 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:26:58.750 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:28:09.546 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+16:28:09.572 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+16:29:01.873 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:29:01.880 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:29:01.880 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:29:01.982 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:29:01.982 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:29:01.997 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:29:02.173 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:29:02.175 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:29:02.175 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@549d2615] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:29:02.176 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:29:02.177 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:29:02.449 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:29:05.672 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:29:05.685 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:29:05.685 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:29:05.686 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:29:05.686 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:29:05.686 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:29:05.686 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:29:27.914 [http-bio-8080-exec-10] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:29:27 GMT]
+16:31:53.933 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+16:31:53.959 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+16:32:48.506 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:32:48.513 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:32:48.513 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:32:48.593 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:32:48.593 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:32:48.652 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:32:48.882 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:32:48.884 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:32:48.885 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@6f79d570] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:32:48.885 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:32:48.887 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:32:49.172 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:32:53.626 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:32:53.642 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:32:53.642 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:32:53.644 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:32:53.644 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:32:53.644 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:32:53.644 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:33:03.401 [http-bio-8080-exec-3] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:33:03 GMT]
+16:33:25.869 [http-bio-8080-exec-5] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:33:25 GMT]
+16:33:28.761 [http-bio-8080-exec-8] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:33:28 GMT]
+16:34:26.774 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:34:26.777 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:34:26.778 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:34:26.833 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:34:26.834 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:34:26.855 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:34:27.053 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:34:27.055 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:34:27.055 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@5e3980b8] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:34:27.056 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:34:27.058 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:34:27.317 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:34:30.119 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:34:30.150 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login] from String definition [anon]
+16:34:30.150 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login] to filter [anon] with config [null]
+16:34:30.152 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:34:30.152 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:34:30.152 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:34:30.152 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:35:03.884 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:35:03.889 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:35:03.889 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:35:03.939 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:35:03.939 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:35:03.959 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:35:04.136 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:35:04.140 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:35:04.140 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@7aac10d2] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:35:04.140 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:35:04.142 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:35:04.340 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:35:07.043 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:35:07.067 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:35:07.067 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:35:07.069 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:35:07.070 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:35:07.070 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:35:07.070 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:35:14.315 [http-bio-8080-exec-5] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:35:14 GMT]
+16:35:37.377 [http-bio-8080-exec-6] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:35:37 GMT]
+16:36:43.821 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:36:43.825 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:36:43.825 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:36:43.881 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:36:43.882 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:36:43.901 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:36:44.077 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:36:44.079 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:36:44.080 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@2a686cd8] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:36:44.081 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:36:44.082 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:36:44.277 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:36:47.106 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:36:47.132 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:36:47.132 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:36:47.134 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:36:47.134 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:36:47.134 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:36:47.134 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:37:02.112 [http-bio-8080-exec-3] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:37:02 GMT]
+16:38:00.628 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:38:00.635 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:38:00.635 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:38:00.701 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:38:00.701 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:38:00.724 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:38:00.911 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:38:00.913 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:38:00.914 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@7c170cb9] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:38:00.914 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:38:00.917 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:38:01.136 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:38:04.159 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:38:04.179 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:38:04.179 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:38:04.181 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:38:04.181 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:38:04.181 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:38:04.181 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:38:12.649 [http-bio-8080-exec-4] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:38:12 GMT]
+16:38:46.292 [http-bio-8080-exec-7] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:38:46 GMT]
+16:38:51.754 [http-bio-8080-exec-10] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:38:51 GMT]
+16:39:04.857 [http-bio-8080-exec-1] DEBUG o.a.shiro.realm.AuthenticatingRealm - Looked up AuthenticationInfo [admin] from doGetAuthenticationInfo
+16:39:04.859 [http-bio-8080-exec-1] DEBUG o.a.shiro.realm.AuthenticatingRealm - AuthenticationInfo caching is disabled for info [admin].  Submitted token: [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].
+16:39:04.859 [http-bio-8080-exec-1] DEBUG o.a.s.a.c.SimpleCredentialsMatcher - Performing credentials equality check for tokenCredentials of type [[C and accountCredentials of type [[C]
+16:39:04.859 [http-bio-8080-exec-1] DEBUG o.a.s.a.c.SimpleCredentialsMatcher - Both credentials arguments can be easily converted to byte arrays.  Performing array equals comparison
+16:39:04.860 [http-bio-8080-exec-1] DEBUG o.a.s.authc.AbstractAuthenticator - Authentication successful for token [org.apache.shiro.authc.UsernamePasswordToken - admin, rememberMe=false].  Returned account [admin]
+16:39:04.860 [http-bio-8080-exec-1] DEBUG o.a.s.s.s.DefaultSubjectContext - No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+16:39:04.860 [http-bio-8080-exec-1] DEBUG o.a.shiro.mgt.DefaultSecurityManager - Context already contains a session.  Returning.
+16:39:04.861 [http-bio-8080-exec-1] DEBUG o.a.s.s.s.DefaultSubjectContext - No SecurityManager available in subject context map.  Falling back to SecurityUtils.getSecurityManager() lookup.
+16:39:04.861 [http-bio-8080-exec-1] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:39:04 GMT]
+16:39:04.861 [http-bio-8080-exec-1] DEBUG o.a.s.mgt.AbstractRememberMeManager - AuthenticationToken did not indicate RememberMe is requested.  RememberMe functionality will not be executed for corresponding account.
+16:40:15.167 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:40:15.173 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:40:15.174 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:40:15.221 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:40:15.222 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:40:15.241 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:40:15.438 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:40:15.440 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:40:15.441 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@7aac10d2] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:40:15.441 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:40:15.442 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:40:15.651 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:40:18.327 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:40:18.346 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:40:18.346 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:40:18.348 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:40:18.348 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:40:18.348 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:40:18.348 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:41:03.130 [http-bio-8080-exec-6] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:41:03 GMT]
+16:42:18.041 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:49:02.345 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:49:02.351 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:49:02.351 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:49:02.390 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:49:02.390 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:49:02.403 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:49:02.568 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:49:02.570 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:49:02.571 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@350293f1] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:49:02.571 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:49:02.573 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:49:02.758 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:49:05.283 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:49:05.300 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:49:05.301 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:49:05.302 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:49:05.303 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:49:05.303 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:49:05.303 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:49:48.431 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+16:49:48.440 [localhost-startStop-2] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+16:50:21.974 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:50:21.982 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:50:21.983 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:50:22.041 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:50:22.041 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:50:22.061 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:50:22.257 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:50:22.259 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:50:22.259 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@31df61e8] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:50:22.259 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:50:22.260 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:50:22.492 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:50:25.161 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:50:25.184 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:50:25.185 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:50:25.186 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:50:25.187 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:50:25.187 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:50:25.187 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+16:51:13.747 [http-bio-8080-exec-9] DEBUG o.a.shiro.web.servlet.SimpleCookie - Added HttpServletResponse Cookie [rememberMe=deleteMe; Path=/WebApp; Max-Age=0; Expires=Fri, 27-May-2016 08:51:13 GMT]
+16:51:23.266 [http-bio-8080-exec-9] ERROR demo.controller.LoginController - Authentication failed for token submission [org.apache.shiro.authc.UsernamePasswordToken - asd, rememberMe=false].  Possible unexpected error? (Typical or expected login exceptions should extend from AuthenticationException).
+16:51:56.428 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [securityManager]...
+16:51:56.438 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Destroying bean [shiroEhcacheManager]...
+16:52:42.430 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+16:52:42.433 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:52:42.433 [localhost-startStop-1] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+16:52:42.493 [localhost-startStop-1] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+16:52:42.494 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+16:52:42.516 [localhost-startStop-1] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+16:52:42.709 [localhost-startStop-1] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+16:52:42.711 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+16:52:42.711 [localhost-startStop-1] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@1a502fda] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+16:52:42.711 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+16:52:42.714 [localhost-startStop-1] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+16:52:42.927 [localhost-startStop-1] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+16:52:45.609 [localhost-startStop-1] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+16:52:45.633 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/login/validate] from String definition [anon]
+16:52:45.633 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/login/validate] to filter [anon] with config [null]
+16:52:45.635 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/resources/**] from String definition [anon]
+16:52:45.635 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/resources/**] to filter [anon] with config [null]
+16:52:45.635 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Creating chain [/**] from String definition [authc]
+16:52:45.635 [localhost-startStop-1] DEBUG o.a.s.w.f.m.DefaultFilterChainManager - Attempting to apply path [/**] to filter [authc] with config [null]
+19:31:13.999 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+19:31:14.006 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+19:31:14.006 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+19:31:14.083 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+19:31:14.084 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+19:31:14.110 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+19:31:14.502 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+19:31:14.506 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+19:31:14.506 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@59bcd11b] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+19:31:14.506 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+19:31:14.508 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+19:31:14.799 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+19:31:18.963 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:28:20.733 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:28:20.749 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:28:20.750 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:28:20.834 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:28:20.834 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:28:20.903 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:28:21.598 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:28:21.602 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:28:21.602 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@784d2e57] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:28:21.602 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:28:21.604 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:28:22.027 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:28:27.886 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:28:57.156 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:28:57.162 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:28:57.163 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:28:57.238 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:28:57.238 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:28:57.264 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:28:57.666 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:28:57.670 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:28:57.670 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@65085da4] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:28:57.670 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:28:57.672 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:28:57.958 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:29:01.640 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:30:09.876 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:30:09.883 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:30:09.883 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:30:09.960 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:30:09.961 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:30:09.985 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:30:10.386 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:30:10.390 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:30:10.390 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@9e352d3] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:30:10.391 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:30:10.392 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:30:10.710 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:30:14.356 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:32:32.913 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:32:32.919 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:32:32.919 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:32:32.996 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:32:32.996 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:32:33.020 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:32:33.414 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:32:33.418 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:32:33.418 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@4f70e5ba] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:32:33.418 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:32:33.420 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:32:33.711 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:32:37.375 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:38:44.797 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:38:44.803 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:38:44.804 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:38:44.880 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:38:44.880 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:38:44.907 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:38:45.410 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:38:45.414 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:38:45.414 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@6f489087] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:38:45.414 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:38:45.416 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:38:45.714 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:38:49.585 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:38:50.513 [main] WARN  n.r.xmemcached.XMemcachedClient - XMemcachedClient is using Text protocol
+23:38:50.754 [main] WARN  c.g.c.y.core.impl.AbstractController - The Controller started at localhost/127.0.0.1:0 ...
+23:38:51.783 [Xmemcached-Reactor-0] ERROR c.g.c.y.core.impl.AbstractController - Exception occured in controller
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:38:51.783 [main] ERROR n.r.xmemcached.XMemcachedClient - connect to 127.0.0.1:11211 error
+java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at net.rubyeye.xmemcached.utils.XMemcachedClientFactoryBean.getObject(XMemcachedClientFactoryBean.java:237)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:271)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1021)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:964)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:862)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:494)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:298)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1186)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:706)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:993)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4420)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4733)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:840)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:463)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:525)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:754)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:595)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:744)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:38:51.784 [Xmemcached-Reactor-0] ERROR remoting - Reactor dispatch events error
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:38:51.791 [main] ERROR n.r.xmemcached.XMemcachedClient - Connect to 127.0.0.1:11211 fail
+java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information
+	at com.google.code.yanf4j.core.impl.FutureImpl.get(FutureImpl.java:145)
+	at net.rubyeye.xmemcached.XMemcachedClient.connect(XMemcachedClient.java:582)
+	at net.rubyeye.xmemcached.XMemcachedClient.<init>(XMemcachedClient.java:870)
+	at net.rubyeye.xmemcached.XMemcachedClientBuilder.build(XMemcachedClientBuilder.java:340)
+	at net.rubyeye.xmemcached.utils.XMemcachedClientFactoryBean.getObject(XMemcachedClientFactoryBean.java:237)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:168)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:103)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:250)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:198)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:271)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1021)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:964)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:862)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:494)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:298)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1186)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:706)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:212)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1173)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:993)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4420)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4733)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:840)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:463)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:525)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:754)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:595)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:744)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:404)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:38:53.792 [Heal-Session-Thread] WARN  c.g.c.y.core.impl.AbstractController - Trying to connect to 127.0.0.1:11211 for 1 times
+23:38:54.792 [Xmemcached-Reactor-0] ERROR c.g.c.y.core.impl.AbstractController - Exception occured in controller
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:38:54.792 [Heal-Session-Thread] ERROR c.g.c.y.core.impl.AbstractController - Reconnect to 127.0.0.1:11211 fail
+23:38:54.793 [Xmemcached-Reactor-0] ERROR remoting - Reactor dispatch events error
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:38:56.795 [Heal-Session-Thread] WARN  c.g.c.y.core.impl.AbstractController - Trying to connect to 127.0.0.1:11211 for 2 times
+23:38:57.795 [Xmemcached-Reactor-0] ERROR c.g.c.y.core.impl.AbstractController - Exception occured in controller
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:38:57.796 [Heal-Session-Thread] ERROR c.g.c.y.core.impl.AbstractController - Reconnect to 127.0.0.1:11211 fail
+23:38:57.796 [Xmemcached-Reactor-0] ERROR remoting - Reactor dispatch events error
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:39:01.796 [Heal-Session-Thread] WARN  c.g.c.y.core.impl.AbstractController - Trying to connect to 127.0.0.1:11211 for 3 times
+23:39:02.796 [Xmemcached-Reactor-0] ERROR c.g.c.y.core.impl.AbstractController - Exception occured in controller
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:39:02.796 [Heal-Session-Thread] ERROR c.g.c.y.core.impl.AbstractController - Reconnect to 127.0.0.1:11211 fail
+23:39:02.797 [Xmemcached-Reactor-0] ERROR remoting - Reactor dispatch events error
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:39:08.797 [Heal-Session-Thread] WARN  c.g.c.y.core.impl.AbstractController - Trying to connect to 127.0.0.1:11211 for 4 times
+23:39:09.797 [Xmemcached-Reactor-0] ERROR c.g.c.y.core.impl.AbstractController - Exception occured in controller
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:39:09.797 [Heal-Session-Thread] ERROR c.g.c.y.core.impl.AbstractController - Reconnect to 127.0.0.1:11211 fail
+23:39:09.798 [Xmemcached-Reactor-0] ERROR remoting - Reactor dispatch events error
+java.io.IOException: Connect to 127.0.0.1:11211 fail,Connection refused: no further information
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.onConnect(MemcachedConnector.java:423)
+	at com.google.code.yanf4j.nio.impl.Reactor.dispatchEvent(Reactor.java:331)
+	at com.google.code.yanf4j.nio.impl.Reactor.run(Reactor.java:180)
+23:39:31.563 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:39:31.569 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:39:31.569 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:39:31.648 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:39:31.648 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:39:31.675 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:39:32.110 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:39:32.114 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:39:32.114 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@3b837834] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:39:32.114 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:39:32.116 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:39:32.416 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:39:36.055 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:39:36.890 [main] WARN  n.r.xmemcached.XMemcachedClient - XMemcachedClient is using Text protocol
+23:39:37.024 [main] WARN  c.g.c.y.core.impl.AbstractController - The Controller started at localhost/127.0.0.1:0 ...
+23:39:37.127 [Xmemcached-Reactor-0] WARN  c.g.c.y.core.impl.AbstractController - Add a session: 127.0.0.1:11211
+23:47:18.486 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:47:18.493 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:47:18.494 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:47:18.594 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:47:18.594 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:47:18.627 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:47:19.098 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:47:19.102 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:47:19.103 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@cd8658e] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:47:19.103 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:47:19.105 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:47:19.470 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:47:24.358 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:47:25.493 [main] WARN  n.r.xmemcached.XMemcachedClient - XMemcachedClient is using Text protocol
+23:47:25.662 [main] WARN  c.g.c.y.core.impl.AbstractController - The Controller started at localhost/127.0.0.1:0 ...
+23:47:25.713 [Xmemcached-Reactor-0] WARN  c.g.c.y.core.impl.AbstractController - Add a session: 127.0.0.1:11211
+23:48:38.990 [http-8080-1] ERROR p.utils.MemcachedCacheManagerImpl - 写缓存失�?
+java.lang.IllegalArgumentException: Non-serializable object
+	at net.rubyeye.xmemcached.transcoders.BaseSerializingTranscoder.serialize(BaseSerializingTranscoder.java:96)
+	at net.rubyeye.xmemcached.transcoders.SerializingTranscoder.encode(SerializingTranscoder.java:208)
+	at net.rubyeye.xmemcached.command.text.TextStoreCommand.encodeValue(TextStoreCommand.java:199)
+	at net.rubyeye.xmemcached.command.text.TextStoreCommand.encode(TextStoreCommand.java:155)
+	at net.rubyeye.xmemcached.impl.MemcachedTCPSession.wrapMessage(MemcachedTCPSession.java:178)
+	at com.google.code.yanf4j.core.impl.AbstractSession.write(AbstractSession.java:382)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.send(MemcachedConnector.java:516)
+	at net.rubyeye.xmemcached.XMemcachedClient.sendCommand(XMemcachedClient.java:315)
+	at net.rubyeye.xmemcached.XMemcachedClient.sendStoreCommand(XMemcachedClient.java:2496)
+	at net.rubyeye.xmemcached.XMemcachedClient.set(XMemcachedClient.java:1338)
+	at net.rubyeye.xmemcached.XMemcachedClient.set(XMemcachedClient.java:1396)
+	at net.rubyeye.xmemcached.XMemcachedClient.set(XMemcachedClient.java:1383)
+	at platform.utils.MemcachedCacheManagerImpl.put(MemcachedCacheManagerImpl.java:58)
+	at demo.controller.DemoController.welcomeView(DemoController.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:749)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:689)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:938)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:870)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter.doFilterInternal(OpenEntityManagerInViewFilter.java:177)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at platform.security.AntiSamyFilter.doFilter(AntiSamyFilter.java:49)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.NotSerializableException: demo.entity.DemoEntity
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1183)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:347)
+	at java.util.ArrayList.writeObject(ArrayList.java:742)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:988)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1495)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1431)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1177)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:347)
+	at net.rubyeye.xmemcached.transcoders.BaseSerializingTranscoder.serialize(BaseSerializingTranscoder.java:91)
+	... 64 common frames omitted
+23:49:14.179 [http-8080-1] ERROR p.utils.MemcachedCacheManagerImpl - 写缓存失�?
+java.lang.IllegalArgumentException: Non-serializable object
+	at net.rubyeye.xmemcached.transcoders.BaseSerializingTranscoder.serialize(BaseSerializingTranscoder.java:96)
+	at net.rubyeye.xmemcached.transcoders.SerializingTranscoder.encode(SerializingTranscoder.java:208)
+	at net.rubyeye.xmemcached.command.text.TextStoreCommand.encodeValue(TextStoreCommand.java:199)
+	at net.rubyeye.xmemcached.command.text.TextStoreCommand.encode(TextStoreCommand.java:155)
+	at net.rubyeye.xmemcached.impl.MemcachedTCPSession.wrapMessage(MemcachedTCPSession.java:178)
+	at com.google.code.yanf4j.core.impl.AbstractSession.write(AbstractSession.java:382)
+	at net.rubyeye.xmemcached.impl.MemcachedConnector.send(MemcachedConnector.java:516)
+	at net.rubyeye.xmemcached.XMemcachedClient.sendCommand(XMemcachedClient.java:315)
+	at net.rubyeye.xmemcached.XMemcachedClient.sendStoreCommand(XMemcachedClient.java:2496)
+	at net.rubyeye.xmemcached.XMemcachedClient.set(XMemcachedClient.java:1338)
+	at net.rubyeye.xmemcached.XMemcachedClient.set(XMemcachedClient.java:1396)
+	at net.rubyeye.xmemcached.XMemcachedClient.set(XMemcachedClient.java:1383)
+	at platform.utils.MemcachedCacheManagerImpl.put(MemcachedCacheManagerImpl.java:58)
+	at demo.controller.DemoController.welcomeView(DemoController.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:749)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:689)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:938)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:870)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter.doFilterInternal(OpenEntityManagerInViewFilter.java:177)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at platform.security.AntiSamyFilter.doFilter(AntiSamyFilter.java:49)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.NotSerializableException: demo.entity.DemoEntity
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1183)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:347)
+	at java.util.ArrayList.writeObject(ArrayList.java:742)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:988)
+	at java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1495)
+	at java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1431)
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1177)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:347)
+	at net.rubyeye.xmemcached.transcoders.BaseSerializingTranscoder.serialize(BaseSerializingTranscoder.java:91)
+	... 64 common frames omitted
+23:50:52.806 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:50:52.813 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:50:52.813 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:50:52.911 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:50:52.912 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:50:52.942 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:50:53.441 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:50:53.445 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:50:53.446 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@1aae98b6] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:50:53.446 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:50:53.448 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:50:53.828 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:50:58.458 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:50:59.544 [main] WARN  n.r.xmemcached.XMemcachedClient - XMemcachedClient is using Text protocol
+23:50:59.708 [main] WARN  c.g.c.y.core.impl.AbstractController - The Controller started at localhost/127.0.0.1:0 ...
+23:50:59.759 [Xmemcached-Reactor-0] WARN  c.g.c.y.core.impl.AbstractController - Add a session: 127.0.0.1:11211
+23:51:57.167 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [loginRealm]...
+23:51:57.175 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:51:57.175 [main] INFO  o.a.shiro.realm.AuthorizingRealm - No cache or cacheManager properties have been set.  Authorization cache cannot be obtained.
+23:51:57.266 [main] DEBUG o.a.s.s.LifecycleBeanPostProcessor - Initializing bean [shiroEhcacheManager]...
+23:51:57.266 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - cacheManager property not set.  Constructing CacheManager instance... 
+23:51:57.297 [main] DEBUG org.apache.shiro.io.ResourceUtils - Opening resource from class path [ehcache-shiro.xml]
+23:51:57.794 [main] DEBUG o.a.s.cache.ehcache.EhCacheManager - implicit cacheManager created successfully.
+23:51:57.798 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - No authorizationCache instance set.  Checking for a cacheManager...
+23:51:57.798 [main] DEBUG o.a.shiro.realm.AuthorizingRealm - CacheManager [org.apache.shiro.cache.ehcache.EhCacheManager@2096fb9f] has been configured.  Building authorization cache named [platform.security.LoginRealm.authorizationCache]
+23:51:57.799 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Cache with name 'platform.security.LoginRealm.authorizationCache' does not yet exist.  Creating now.
+23:51:57.800 [main] INFO  o.a.s.cache.ehcache.EhCacheManager - Added EhCache named [platform.security.LoginRealm.authorizationCache]
+23:51:58.125 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+23:52:02.621 [main] DEBUG o.a.s.s.web.ShiroFilterFactoryBean - Creating Shiro Filter instance.
+23:52:03.706 [main] WARN  n.r.xmemcached.XMemcachedClient - XMemcachedClient is using Text protocol
+23:52:03.869 [main] WARN  c.g.c.y.core.impl.AbstractController - The Controller started at localhost/127.0.0.1:0 ...
+23:52:03.974 [Xmemcached-Reactor-0] WARN  c.g.c.y.core.impl.AbstractController - Add a session: 127.0.0.1:11211
