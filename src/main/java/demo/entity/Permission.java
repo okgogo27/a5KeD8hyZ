@@ -9,19 +9,29 @@ import platform.demo.entity.IdEntity;
 @Table(name = "permission")
 public class Permission extends IdEntity {
 
-    private static final long serialVersionUID = -1771109097792521796L;
+	private static final long serialVersionUID = -1771109097792521796L;
 
-    /**
-     * 权限名称
-     */
-    private String name;
+	/**
+	 * 权限名称
+	 */
+	private String name;
 
-    public String getName() {
-        return name;
-    }
+	private String code;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

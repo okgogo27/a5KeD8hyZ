@@ -14,7 +14,7 @@ import demo.entity.Menu;
 import platform.property.HttpRequestHelper;
 import platform.security.AuthorizationInfoExpand;
 import platform.security.LoginRealm;
-import platform.utils.PlatformBeanHelper;
+import platform.utils.helper.PlatformBeanHelper;
 
 public class MenuTiles implements ViewPreparer {
 

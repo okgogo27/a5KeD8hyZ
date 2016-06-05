@@ -1,4 +1,4 @@
-package platform.utils;
+package platform.utils.helper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 
 import platform.security.LoginRealm;
+import platform.utils.AplicationContextHelper;
 
 /**
  * 获取spring bean，尽量采用使用IOC注入，必要时再使用该类。 spring

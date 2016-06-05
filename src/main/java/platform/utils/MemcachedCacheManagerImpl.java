@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class MemcachedCacheManagerImpl implements MemcachedCacheManager {
 
     // �? * �? * �? * �? [�?�?30天]，这里设置为0�?0表示永不超时
@@ -15,47 +15,71 @@ public class MemcachedCacheManagerImpl implements MemcachedCacheManager {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Autowired
-    private MemcachedClient memcachedClient;
+	@Override
+	public <T> T get(String category, String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    @Override
-    @SuppressWarnings("unchecked")
-    public <T> T get(final String category, final String key) {
-        try {
-            return (T) memcachedClient.get(category + key);
-        } catch (Exception e) {
-            logger.error("读缓存失�?", e);
-            return null;
-        }
-    }
+	@Override
+	public boolean put(String category, String key, Object value) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    @Override
-    public boolean put(final String category, final String key, final Object value) {
-        try {
-            return memcachedClient.set(category + key, MAX_EXPIRED_TIME, value);
-        } catch (Exception e) {
-            logger.error("写缓存失�?", e);
-            return false;
-        }
-    }
+	@Override
+	public boolean remove(String category, String key) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    @Override
-    public boolean remove(final String category, final String key) {
-        try {
-            return memcachedClient.delete(category + key);
-        } catch (Exception e) {
-            logger.error("删缓存失�?", e);
-            return false;
-        }
-    }
+	@Override
+	public boolean put(String category, String key, Object value, int exp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    @Override
-    public boolean put(String category, String key, Object value, int exp) {
-        try {
-            return memcachedClient.set(category + key, exp, value);
-        } catch (Exception e) {
-            logger.error("写缓存失�?", e);
-            return false;
-        }
-    }
+//    @Autowired
+//    private MemcachedClient memcachedClient;
+
+//    @Override
+//    @SuppressWarnings("unchecked")
+//    public <T> T get(final String category, final String key) {
+//        try {
+//            return (T) memcachedClient.get(category + key);
+//        } catch (Exception e) {
+//            logger.error("读缓存失�?", e);
+//            return null;
+//        }
+//    }
+//
+//    @Override
+//    public boolean put(final String category, final String key, final Object value) {
+//        try {
+//            return memcachedClient.set(category + key, MAX_EXPIRED_TIME, value);
+//        } catch (Exception e) {
+//            logger.error("写缓存失�?", e);
+//            return false;
+//        }
+//    }
+//
+//    @Override
+//    public boolean remove(final String category, final String key) {
+//        try {
+//            return memcachedClient.delete(category + key);
+//        } catch (Exception e) {
+//            logger.error("删缓存失�?", e);
+//            return false;
+//        }
+//    }
+//
+//    @Override
+//    public boolean put(String category, String key, Object value, int exp) {
+//        try {
+//            return memcachedClient.set(category + key, exp, value);
+//        } catch (Exception e) {
+//            logger.error("写缓存失�?", e);
+//            return false;
+//        }
+//    }
 }
