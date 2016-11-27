@@ -55,7 +55,7 @@ public class MenuTiles implements ViewPreparer {
 
         MenuTiles.menu = info.getMenuAll();
         MenuTiles.menuLeaf = info.getMenuLeaf();
-    }
+    } 
 
     private Menu getCurrentMenu(String url) {
         for (Menu menu : MenuTiles.menuLeaf) {
