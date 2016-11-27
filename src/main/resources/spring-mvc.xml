@@ -25,7 +25,14 @@
 	<aop:aspectj-autoproxy />
 
 	<!-- conversion-service 对静态注入无影响，可以不用配置 -->
-	<mvc:annotation-driven conversion-service="conversionService" />
+	<mvc:annotation-driven conversion-service="conversionService">
+		<mvc:message-converters register-defaults="true">
+			<!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg value="UTF-8" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 
 	<mvc:resources location="resources/" mapping="resources/**"></mvc:resources>
 
