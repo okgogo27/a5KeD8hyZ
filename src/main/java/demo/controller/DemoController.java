@@ -18,7 +18,7 @@ import demo.service.DemoService;
 import platform.Test.AspectTest;
 import platform.repository.SqlReposity;
 import platform.utils.AplicationContextHelper;
-import platform.utils.PredicateUtils;
+import platform.utils.PlatformUtils;
 
 @Controller
 @RequestMapping("main")

@@ -11,7 +11,7 @@ import org.apache.tiles.context.TilesRequestContext;
 import org.apache.tiles.preparer.ViewPreparer;
 
 import demo.entity.Menu;
-import platform.property.HttpRequestHelper;
+import platform.property.HttpHelper;
 import platform.security.AuthorizationInfoExpand;
 import platform.security.LoginRealm;
 import platform.utils.helper.PlatformBeanHelper;
@@ -29,7 +29,7 @@ public class MenuTiles implements ViewPreparer {
             initMenu();
         }
 
-        HttpServletRequest request = HttpRequestHelper.getRequest();
+        HttpServletRequest request = HttpHelper.getRequest();
         String requestUrl = (String) request.getAttribute("javax.servlet.forward.request_uri");
         Set<Menu> secondMenu = new TreeSet<Menu>();
         for (Menu childMenu : menu) {

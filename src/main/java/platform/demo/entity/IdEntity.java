@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 
-import platform.utils.PredicateUtils;
+import platform.utils.PlatformUtils;
 
 @MappedSuperclass
 public class IdEntity implements Serializable {
@@ -28,7 +28,7 @@ public class IdEntity implements Serializable {
 
     @PrePersist
     public void prePersist() {
-        PredicateUtils.getEntityTriggerManager().prePersist(this);
+        PlatformUtils.getEntityTriggerManager().prePersist(this);
     }
 
 }

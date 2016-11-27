@@ -10,6 +10,8 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.util.PropertyPlaceholderHelper;
 
+
+//捕获spring加载的配置文件信息
 public class PropertyLoader extends PropertyPlaceholderConfigurer {
 
 	private static Map<String, String> properties = new HashMap<String, String>();

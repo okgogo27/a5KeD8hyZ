@@ -15,7 +15,7 @@
 		</param-value>
 	</context-param>
 
-	<!-- spring 启动容器 -->
+	<!-- spring 启动容器 加载配置文件 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

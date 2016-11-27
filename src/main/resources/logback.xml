@@ -2,7 +2,7 @@
 <!-- 采用slf4j的统一日志接口。日志输出使用logback，logback会自动加载classpath根目录的logback.xml -->
 <configuration>
 	<!-- 定义日志目录的路径 -->
-	<property name="LOG_HOME" value="E:/WebApp/logs" />
+	<property name="LOG_HOME" value="/Users/wangxiaodong/Documents/workspace/logs" />
 
 	<!-- 控制台输出 -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

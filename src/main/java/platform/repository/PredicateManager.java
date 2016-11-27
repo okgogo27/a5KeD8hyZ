@@ -9,7 +9,7 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import platform.utils.PredicateUtils;
+import platform.utils.PlatformUtils;
 
 import javax.persistence.criteria.CriteriaBuilder.In;
 
@@ -28,7 +28,7 @@ public class PredicateManager {
 
     public PredicateManager(Class<?> clazz) {
         // conversionService = PredicateUtils.getConversionService();
-        entityManager = PredicateUtils.getEntityManager();
+        entityManager = PlatformUtils.getEntityManager();
         criteriaBuilder = entityManager.getCriteriaBuilder();
         criteriaQuery = criteriaBuilder.createQuery(clazz);
         root = criteriaQuery.from(clazz);
