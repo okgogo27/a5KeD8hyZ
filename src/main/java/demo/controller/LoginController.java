@@ -16,50 +16,50 @@ import platform.menu.MenuTiles;
 @RequestMapping("login")
 public class LoginController {
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+	private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @RequestMapping("")
-    public String login() {
-        return "login";
-    }
+	@RequestMapping("")
+	public String login() {
+		return "login";
+	}
 
-    @RequestMapping("validate")
-    public String loginValidate(String userName, String passWord) {
-        // userName or passWord 为空会抛出异常
-        if (userName == null || passWord == null) {
-            return "redirect:../login";
-        }
-        Subject subject = SecurityUtils.getSubject();
-        // 防止浏览器后退键切换用户登录bug
-        if (subject.getPrincipals() != null) {
-            clearMenuAndExit();
-        }
-        // 执行realm doGetAuthenticationInfo方法
-        UsernamePasswordToken token = new UsernamePasswordToken(userName, passWord);
-        try {
-            subject.login(token);
-            if (subject.isAuthenticated()) {
-                // 执行realm doGetAuthorizationInfo方法
-                return "redirect:../main/welcome";
-            }
-        } catch (AuthenticationException ex) {
-            logger.info(ex.getMessage());
-        }
-        return "redirect:../login";
-    }
+	@RequestMapping("validate")
+	public String loginValidate(String userName, String passWord) {
+		// userName or passWord 为空会抛出异常
+		if (userName == null || passWord == null) {
+			return "redirect:../login";
+		}
+		Subject subject = SecurityUtils.getSubject();
+		// 防止浏览器后退键切换用户登录bug
+		if (subject.getPrincipals() != null) {
+			clearMenuAndExit();
+		}
+		// 执行realm doGetAuthenticationInfo方法
+		UsernamePasswordToken token = new UsernamePasswordToken(userName, passWord);
+		try {
+			subject.login(token);
+			// 执行realm doGetAuthorizationInfo方法
+			if (subject.isAuthenticated()) {
+				return "redirect:../main/welcome";
+			}
+		} catch (AuthenticationException ex) {
+			logger.info(ex.getMessage());
+		}
+		return "redirect:../login";
+	}
 
-    @RequestMapping("exit")
-    public String exitSystem() {
+	@RequestMapping("exit")
+	public String exitSystem() {
 
-        clearMenuAndExit();
+		clearMenuAndExit();
 
-        return "redirect:../login";
-    }
+		return "redirect:../login";
+	}
 
-    // 清空菜单并退出，不太好的方法
-    private void clearMenuAndExit() {
-        MenuTiles.getMenu().clear();
-        MenuTiles.getMenuLeaf().clear();
-        SecurityUtils.getSubject().logout();
-    }
+	// 清空菜单并退出，不太好的方法
+	private void clearMenuAndExit() {
+		MenuTiles.getMenu().clear();
+		MenuTiles.getMenuLeaf().clear();
+		SecurityUtils.getSubject().logout();
+	}
 }

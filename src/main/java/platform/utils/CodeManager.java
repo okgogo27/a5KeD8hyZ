@@ -9,6 +9,8 @@ import javax.annotation.PostConstruct;
 import platform.demo.entity.IdEntity;
 
 public class CodeManager {
+	
+	private CodeManager(){}
 
     private List<CodeMethod<? extends IdEntity>> codeMethods;
 

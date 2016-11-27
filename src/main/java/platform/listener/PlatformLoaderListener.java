@@ -7,22 +7,29 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletRequestEvent;
 import javax.servlet.ServletRequestListener;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
+
 import platform.property.HttpHelper;
+import platform.security.AuthorizationInfoExpand;
+import platform.security.LoginRealm;
 import platform.utils.helper.Currents;
 import platform.utils.helper.DateUtils;
+import platform.utils.helper.PlatformBeanHelper;
 
-//
 public class PlatformLoaderListener implements ServletContextListener, ServletRequestListener {
 
+	
 	public void requestDestroyed(ServletRequestEvent arg0) {
 		// TODO Auto-generated method stub
 
 	}
 
 	public void requestInitialized(ServletRequestEvent arg0) {
+		
 		ServletRequest request = arg0.getServletRequest();
 		request.setAttribute(HttpHelper.CURRENT_DATE_KEY, DateUtils.formatDate(Currents.getCurrentDate()));
-
+	
 	}
 
 	public void contextDestroyed(ServletContextEvent arg0) {

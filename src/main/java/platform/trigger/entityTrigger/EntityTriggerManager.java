@@ -8,6 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import platform.demo.entity.IdEntity;
 
 public class EntityTriggerManager {
+	
+	private EntityTriggerManager(){}
 
     private List<EntityTrigger<?>> entityTriggerAll;
 
